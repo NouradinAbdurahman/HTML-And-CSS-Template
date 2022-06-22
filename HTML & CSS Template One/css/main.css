@@ -1,0 +1,207 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --main-transition: 0.3s;
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --section-background: #ececec;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Cairo", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 70%;
+  margin: auto;
+}
+
+/* ------- start Header -------- */
+header {
+  background-color: #fff;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.295);
+}
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.logo {
+  user-select: none;
+  /* height: 70px; */
+}
+.logo .logo-title {
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+.logo .logo-title .link {
+  color: var(--main-color);
+}
+.main-nav {
+  position: relative;
+}
+.links .list {
+  display: inline-block;
+  padding: 10px;
+  line-height: 3.5;
+  cursor: pointer;
+  transition: background-color var(--main-transition) ease-in-out;
+  -webkit-transition: background-color var(--main-transition) ease-in-out;
+  -moz-transition: background-color var(--main-transition) ease-in-out;
+  -ms-transition: background-color var(--main-transition) ease-in-out;
+  -o-transition: background-color var(--main-transition) ease-in-out;
+  position: relative;
+}
+.links .list .link::before {
+  position: absolute;
+  content: " ";
+  width: 0%;
+  height: 4px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #1787e0;
+  transition: width var(--main-transition) ease-in-out;
+  -webkit-transition: width var(--main-transition) ease-in-out;
+  -moz-transition: width var(--main-transition) ease-in-out;
+  -ms-transition: width var(--main-transition) ease-in-out;
+  -o-transition: width var(--main-transition) ease-in-out;
+}
+.links .list:hover {
+  background-color: #ececec47;
+}
+.links .list:hover .link::before {
+  width: 100%;
+}
+.links .list .link {
+  text-transform: capitalize;
+  color: #000;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  transition: color var(--main-transition) ease-in-out;
+  -webkit-transition: color var(--main-transition) ease-in-out;
+  -moz-transition: color var(--main-transition) ease-in-out;
+  -ms-transition: color var(--main-transition) ease-in-out;
+  -o-transition: color var(--main-transition) ease-in-out;
+}
+.links .list:hover .link {
+  color: var(--main-color);
+}
+/* ------- end Header -------- */
+
+/* ------ start Hero section -------- */
+.hero {
+  width: 100%;
+  height: 91vh;
+  position: relative;
+  background-color: var(--section-background);
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+  padding-top: var(--main-padding-top);
+}
+.hero-title {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.hero-desc {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #666;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.hero-image img {
+  width: 100%;
+  animation: up-down 5s linear infinite;
+  -webkit-animation: up-down 2s ease-in-out infinite forwards alternate;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(10%);
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+  }
+}
+.button {
+  position: absolute;
+  content: " ";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  text-align: center;
+}
+.arrow-down {
+  color: var(--main-color);
+  font-size: 2rem;
+  position: absolute;
+  content: " ";
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 15%;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  animation: up-down-arrow 1s ease-in-out infinite normal running ;
+}
+
+@keyframes up-down-arrow {
+  0% {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+}
+  100% {
+    transform: translateY(10%);
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+  }
+}
+
+/* ------ end Hero section -------- */
