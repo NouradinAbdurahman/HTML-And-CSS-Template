@@ -35,6 +35,7 @@ ul {
 header {
   background-color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.295);
+  /* position: relative; */
 }
 .header-content {
   display: flex;
@@ -66,6 +67,10 @@ header {
   -ms-transition: background-color var(--main-transition) ease-in-out;
   -o-transition: background-color var(--main-transition) ease-in-out;
   position: relative;
+}
+.links .list .link .fa-chevron-down {
+  vertical-align: middle;
+  padding-left: 10px;
 }
 .links .list .link::before {
   position: absolute;
@@ -102,6 +107,84 @@ header {
 .links .list:hover .link {
   color: var(--main-color);
 }
+.mega-menu {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  position: absolute;
+  content: " ";
+  width: 70%;
+  top: 30%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 999;
+  padding: 20px 50px;
+  border-bottom: 2px solid var(--main-color);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+}
+.mega-menu.show-mega-menu {
+  visibility: visible;
+  opacity: 1;
+}
+.mega-menu .links li {
+  position: relative;
+  width: 100%;
+  padding: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.138);
+  transition: width var(--main-transition) ease-in-out;
+  -webkit-transition: width var(--main-transition) ease-in-out;
+  -moz-transition: width var(--main-transition) ease-in-out;
+  -ms-transition: width var(--main-transition) ease-in-out;
+  -o-transition: width var(--main-transition) ease-in-out;
+  cursor: pointer;
+}
+.mega-menu .links li:last-child {
+  border: unset;
+}
+.mega-menu .links li::before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #ececec47;
+  z-index: 99;
+}
+.mega-menu .links li:hover::before {
+  animation: width .5s ease-in-out  forwards alternate;
+  -webkit-animation: width .5s ease-in-out  forwards alternate;
+  z-index: -1;
+}
+@keyframes width {
+  100% {
+    width: 100%;
+  }
+}
+.mega-menu .links li i,
+.mega-menu .links li a {
+  color: var(--main-color);
+}
+.mega-menu .links li i {
+  padding-right: 30px;
+}
+.mega-menu .links li a {
+  font-weight: bolder;
+}
+.mega-image {
+  width: 100%;
+  /* padding-right: 20px; */
+}
+
 /* ------- end of Header -------- */
 
 /* ------ start Hero section -------- */
