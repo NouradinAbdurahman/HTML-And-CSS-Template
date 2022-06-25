@@ -30,8 +30,8 @@ ul {
   max-width: 70%;
   margin: auto;
 }
-
-/* ------- start Header -------- */
+/* End Global Rules */
+/* start Header */
 header {
   background-color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.295);
@@ -185,12 +185,12 @@ header {
   /* padding-right: 20px; */
 }
 
-/* ------- end of Header -------- */
+/* end Header */
 
-/* ------ start Hero section -------- */
+/* start Hero */
 .hero {
   width: 100%;
-  height: 91vh;
+  height: 100vh;
   position: relative;
   background-color: var(--section-background);
 }
@@ -242,7 +242,7 @@ header {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 230px;
   background-color: #fff;
   text-align: center;
 }
@@ -254,7 +254,7 @@ header {
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
-  bottom: 15%;
+  bottom: 55%;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -286,13 +286,12 @@ header {
     -o-transform: translateY(10%);
   }
 }
-/* ------- end of Hero section --------- */
+/* end Hero */
 
-/* -------- start artcles section --------- */
+/* start artcles */
 .articles {
-  width: 100%;
-  height: 100vh;
-  background-color: #fff;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
   position: relative;
 }
 .articles-content {
@@ -369,7 +368,7 @@ header {
 }
 .articles-cards {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 40px;
   padding: 30px 0;
 }
@@ -445,4 +444,66 @@ hr {
     padding: 0 0;
   }
 }
-/* -------- end of artcles section --------- */
+/* end artcles start gallery */
+.gallery {
+   padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+.gallery-content {
+  padding: 100px 0;
+}
+.gallery-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.gallery-card{
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+.gallery-image {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-image::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 20%);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 2;
+}
+.gallery-image:hover::before {
+  animation: flashing 0.7s;
+  -webkit-animation: flashing 0.7s;
+}
+.gallery-image img {
+  max-width: 100%;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.gallery-image img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+/* end gallery */
