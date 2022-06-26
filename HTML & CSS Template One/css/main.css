@@ -36,6 +36,7 @@ header {
   background-color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.295);
   /* position: relative; */
+  height: 72px;
 }
 .header-content {
   display: flex;
@@ -44,7 +45,7 @@ header {
 }
 .logo {
   user-select: none;
-  /* height: 70px; */
+  height: 70px;
 }
 .logo .logo-title {
   text-transform: capitalize;
@@ -59,7 +60,7 @@ header {
 .links .list {
   display: inline-block;
   padding: 10px;
-  line-height: 3.5;
+  line-height: 3;
   cursor: pointer;
   transition: background-color var(--main-transition) ease-in-out;
   -webkit-transition: background-color var(--main-transition) ease-in-out;
@@ -114,7 +115,7 @@ header {
   position: absolute;
   content: " ";
   width: 70%;
-  top: 30%;
+  top: 29%;
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
@@ -190,15 +191,30 @@ header {
 /* start Hero */
 .hero {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   position: relative;
+}
+.hero::before {
+  position: absolute;
+  content: " ";
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
   background-color: var(--section-background);
+  z-index: -1;
+  transform: skewY(-6deg);
+  -webkit-transform: skewY(-6deg);
+  -moz-transform: skewY(-6deg);
+  -ms-transform: skewY(-6deg);
+  -o-transform: skewY(-6deg);
+  transform-origin: top left;
 }
 .hero-content {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+  min-height: calc(100vh - 72px);
+  display: flex;
   align-items: center;
-  padding-top: var(--main-padding-top);
+  padding-bottom: 100px;
 }
 .hero-title {
   font-size: 2rem;
@@ -215,7 +231,8 @@ header {
   text-align: center;
 }
 .hero-image img {
-  width: 100%;
+  width: 600px;
+  max-width: 100%;
   animation: up-down 5s linear infinite;
   -webkit-animation: up-down 2s ease-in-out infinite forwards alternate;
 }
@@ -235,32 +252,20 @@ header {
     -o-transform: translateY(10%);
   }
 }
-.button {
+.arrow-down {
   position: absolute;
   content: " ";
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 230px;
-  background-color: #fff;
-  text-align: center;
-}
-.arrow-down {
   color: var(--main-color);
   font-size: 2rem;
-  position: absolute;
-  content: " ";
   left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  bottom: 55%;
-  cursor: pointer;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  bottom: 30px;
+  z-index: 1;
+  transform: translateX(-50%);
   animation: up-down-arrow 1s ease-in-out infinite normal running ;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 @keyframes up-down-arrow {
@@ -293,9 +298,6 @@ header {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
-}
-.articles-content {
-  padding: 100px 0;
 }
 .main-title {
   text-transform: uppercase;
@@ -451,9 +453,6 @@ hr {
   background-color: var(--section-background);
   position: relative;
 }
-.gallery-content {
-  padding: 100px 0;
-}
 .gallery-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -507,3 +506,171 @@ hr {
   }
 }
 /* end gallery */
+/* start features */
+.features {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: var(--main-padding-top) 0;
+}
+.features-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.features-image img {
+  max-width: 100%;
+}
+.features-card {
+  border: 1px solid rgba(0, 0, 0, 0.256);
+}
+.features-image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.features-image::before {
+  position: absolute;
+  content: " ";
+}
+.features-image::after {
+  position: absolute;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  background-color: white;
+  z-index: 1;
+  transform: skewY(-15deg);
+  -webkit-transform: skewY(-15deg);
+  -moz-transform: skewY(-15deg);
+  -ms-transform: skewY(-15deg);
+  -o-transform: skewY(-15deg);
+  transform-origin: bottom right;
+}
+.features-card:hover .features-image::after {
+  transform: skewY(15deg);
+  -webkit-transform: skewY(15deg);
+  -moz-transform: skewY(15deg);
+  -ms-transform: skewY(15deg);
+  -o-transform: skewY(15deg);
+  transform-origin: bottom left;
+} 
+.features .content {
+  background-color: #fff;
+  padding: 80px 30px 30px 30px  ;
+  text-align: center;
+}
+.features-title {
+  font-size: 25px;
+  text-transform: capitalize;
+  position: relative;
+} 
+.features-title h2 {
+  padding-bottom: 5px;
+}
+.features-title .under-line {
+  display: block;
+  width: 80px;
+  height: 5px;
+  background-color: #000;
+  margin: auto;
+}
+.features-title .under-line.red {
+  background-color: red;
+}
+.features-title .under-line.green {
+  background-color: green;
+}
+.features-title .under-line.blue {
+  background-color: blue;
+}
+.features-desc {
+  padding: 30px 0;
+  font-size: 1.3rem;
+  line-height: 2;
+  color: #666;
+}
+.features-btn .btn {
+  position: relative;
+  background-color: white;
+  text-transform: capitalize;
+  font-size: 22px;
+  padding: 10px 30px;
+  outline: none;
+  border: 3px solid black;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-weight: bolder;
+  z-index: 1;
+  cursor: pointer;
+}
+.features-btn .btn::before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 100%;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  z-index: 2;
+}
+.features-btn .btn a {
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.features-card:hover .btn.red::before {
+  width: 100%;
+  background-color: red;
+  z-index: -1;
+} 
+.features-card:hover .btn.green::before {
+  width: 100%;
+  background-color: green;
+  z-index: -1;
+} 
+.features-card:hover .btn.blue::before {
+  width: 100%;
+  background-color: blue;
+  z-index: -1;
+}
+.features-card:hover .btn.red a {
+  color: white;
+}
+.features-card:hover .btn.green a {
+  color: white;
+}
+.features-card:hover .btn.blue a {
+  color: white;
+}
+.features-btn .btn.red {
+  border: 3px solid red;
+}
+.features-btn .btn.red a {
+  color: red;
+}
+.features-btn .btn.green{
+  border: 3px solid green;
+}
+.features-btn .btn.green a {
+  color: green;
+}
+.features-btn .btn.blue{
+  border: 3px solid blue;
+}
+.features-btn .btn.blue a {
+  color: blue;
+}
+/* end features */
