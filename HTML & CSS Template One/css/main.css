@@ -861,3 +861,106 @@ hr {
   color: orange;
 }
 /* end testimonials */
+/* start team members */
+.team-members {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: var(--main-padding-top) 0;
+}
+.team-members-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 100px;
+}
+.team-members-card {
+  position: relative;
+  background-color: #ececec;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  z-index: 1;
+}
+.team-members-card::after {
+  position: absolute;
+  content: " ";
+  top: 0%;
+  right: 0%;
+  width: 0%;
+  height: 100%;
+  background-color: #cac8c8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  z-index: -3;
+  z-index: -1;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.team-members-card:hover::after { 
+  width: 100%;
+}
+.team-members-card:hover.team-members-card .info h3 {
+  color: #cac8c8;
+  color: rgb(112, 111, 111);
+}
+.team-members-card .data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 60px;
+  margin-right: 0px;
+}
+.team-members-card .data img {
+  max-width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-left: -50px;
+  transition: var(--main-transition);
+  /*z-index: -2;*/;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.team-members-card .data .social i {
+  color: #777;
+  padding: 15px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.team-members-card .data .social i:hover {
+  color: var(--main-color);
+}
+.team-members-card .info {
+  padding: 30px;
+}
+.team-members-card .info h3 {
+  text-transform: capitalize;
+  color: var(--main-color-alt);
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+/* end team members */
+/* start services */
+.services {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: var(--main-padding-top) 0;
+}
+/* end services */
