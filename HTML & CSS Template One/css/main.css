@@ -31,13 +31,13 @@ ul {
   max-width: 70%;
   margin: auto;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .container {
-    max-width: 95%;
+    max-width: 90%;
     margin: auto;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   .container {
     max-width: 90%;
     margin: auto;
@@ -835,6 +835,11 @@ hr {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+@media screen and (max-width: 380px) {
+  .testimonials-card img {
+    right: 0px;
+  }
+}
 .testimonials-card h3 {
   color: #000;
   text-transform: capitalize;
@@ -872,17 +877,42 @@ hr {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 100px;
+  gap: 50px;
 }
 .team-members-card {
   position: relative;
-  background-color: #ececec;
-  background-color: #f3f3f3;
+  background-color: transparent;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   z-index: 1;
+}
+/* @media screen and (max-width: 991px) {
+  .team-members-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .team-members-card {
+    margin-left: 50px;
+  }
+} */
+
+.team-members-card::before {
+  position: absolute;
+  content: " ";
+  top: 0%;
+  right: 0%;
+  width: 85%;
+  height: 100%;
+  background-color: #f3f3f3;
+  z-index: -2;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .team-members-card::after {
   position: absolute;
@@ -906,7 +936,7 @@ hr {
   -o-transition: var(--main-transition);
 }
 .team-members-card:hover::after { 
-  width: 100%;
+  width: 85%;
 }
 .team-members-card:hover.team-members-card .info h3 {
   color: #cac8c8;
@@ -916,23 +946,31 @@ hr {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding-top: 60px;
   margin-right: 0px;
 }
 .team-members-card .data img {
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 80%;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  margin-left: -50px;
+  /* margin-left: -50px; */
   transition: var(--main-transition);
   /*z-index: -2;*/;
   -webkit-transition: var(--main-transition);
   -moz-transition: var(--main-transition);
   -ms-transition: var(--main-transition);
   -o-transition: var(--main-transition);
+}
+.team-members-card .data .social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
 }
 .team-members-card .data .social i {
   color: #777;
@@ -947,7 +985,22 @@ hr {
   color: var(--main-color);
 }
 .team-members-card .info {
-  padding: 30px;
+  padding: 30px 70px;
+}
+@media screen and (max-width: 768px) {
+  .team-members-card .info {
+    padding: 30px 120px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .team-members-card .info {
+    padding: 30px 90px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .team-members-card .info {
+    padding: 30px 60px;
+  }
 }
 .team-members-card .info h3 {
   text-transform: capitalize;
@@ -1072,3 +1125,67 @@ hr {
   padding-right: 20px;
 }
 /* end services */
+/* start our skills */
+.our-skills {
+  width: 100%;
+  height: 100%;
+  padding: var(--main-padding-top) 0;
+}
+.our-skills-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  /* grid-template-columns: repeat(2,1fr); */
+  gap: 30px;
+}
+.our-skills-left img {
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  .our-skills-cards {
+   display: flex;
+   flex-direction: column;
+  }
+  .our-skills-left img {
+   display: none;
+  }
+}
+.our-skills-right {
+  position: relative;
+  /* background-color: #1787e0; */
+  display: flex;
+  flex-direction: column;
+}
+.our-skills-right-cards {
+  position: relative;
+  /* background-color: #777; */
+  padding: 20px 0;
+}
+.our-skills-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.our-skills-card-content p {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 3px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: var(--main-color);
+}
+.our-skills-card-range {
+  width: 100%;
+  height: 30px;
+  background-color: #eee;
+}
+.our-skills-card-range .range {
+  width: 80%;
+  height: 30px;
+  background-color: var(--main-color);
+  margin-top: 10px;
+}
+/* end our skills */
