@@ -1194,9 +1194,11 @@ hr {
   width: 100%;
   height: 100%;
   background-color: var(--section-background);
-  padding: var(--main-padding-top);
+  padding: var(--main-padding-top) 0 ;
 }
 .work-steps-cards {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1277,12 +1279,10 @@ hr {
 }
 @media screen and (max-width: 991px) {
   .work-steps-cards {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; */
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
+    align-items: flex-start;
   }
   .work-steps-card.left {
     width: 100%;
@@ -1313,3 +1313,118 @@ hr {
   }
 }
 /* end work steps */
+/* start events */
+.events {
+  width: 100%;
+  height: 100%;
+  padding: var(--main-padding-top) 0;
+  background-color: white;
+  position: relative;
+}
+.dots-top, .dots-bottom {
+  position: absolute;
+  content: " ";
+}
+.dots-top {
+  top: 15%;
+  right: 0;
+}
+.dots-bottom {
+  bottom: 15%;
+  left: 0;
+}
+.events-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px , 1fr));
+  gap: 10px;
+}
+.events-cards img {
+  width: 90%;
+}
+.events-card {
+  text-align: center;
+}
+.events-card .title {
+  padding: 30px 0 10px 0;
+  font-size: 1.5rem;
+}
+.events-card .description {
+  line-height: 1.5;
+  font-size: 1.1rem;
+  color: #999;
+}
+.time {
+  width: 60%;
+  margin: 150px auto 0;
+  padding: 10px;
+  /* background-color: #2196f3; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.time .unit {
+  border: 1px solid rgba(0, 0, 0, 0.281);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: 0 10px;
+}
+.time .days,
+.time .hours,
+.time .minutes,
+.time .seconds {
+  padding: 15px;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--main-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.281);
+} 
+.time .unit span {
+  display: block;
+}
+.time .unit span:last-child {
+  text-transform: capitalize;
+ padding: 10px;
+}
+.subscribe {
+  width: 100%;
+  margin-top: 50px;
+}
+.subscribe form {
+  width: 600px;
+  margin: 20px auto;
+  padding: 30px 40px;
+  background-color: #f6f5f5;
+  border-radius: 50px;
+  display: flex;
+  gap: 20px;
+}
+.subscribe form input[type="email"] {
+  padding: 20px;
+  border-radius: 50px;
+  border: none;
+  flex: 1;
+  caret-color: var(--main-color);
+}
+.subscribe form input[type="email"]:focus::placeholder {
+  visibility: hidden;
+  transition:visibility 0.2s ease-in-out ;
+  -webkit-transition:visibility 0.2s ease-in-out ;
+  -moz-transition:visibility 0.2s ease-in-out ;
+  -ms-transition:visibility 0.2s ease-in-out ;
+  -o-transition:visibility 0.2s ease-in-out ;
+}
+.subscribe form input[type="submit"] {
+  border-radius: 50px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+/* end events */
