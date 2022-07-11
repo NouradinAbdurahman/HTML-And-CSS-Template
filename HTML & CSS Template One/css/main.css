@@ -1343,6 +1343,8 @@ hr {
 }
 .events-card {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .events-card .title {
   padding: 30px 0 10px 0;
@@ -1402,6 +1404,13 @@ hr {
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 767px) {
+  .subscribe form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .subscribe form input[type="email"] {
   padding: 20px;
   border-radius: 50px;
@@ -1433,10 +1442,8 @@ hr {
   width: 100%;
   height: 100%;
   padding: var(--main-padding-top) 0;
-  background-color: white;
   background-color: var(--section-background);
   position: relative;
-
 }
 .pricing-cards {
   display: grid;
@@ -1558,3 +1565,87 @@ hr {
   color: white;
 }
 /* end pricing */
+
+.videos {
+  width: 100%;
+  height: 100%;
+  padding: var(--main-padding-top) 0;
+  background-color: white;
+  position: relative;
+}
+.videos .holder {
+  display: flex;
+  justify-content: center;
+  background-color: var(--section-background);
+  border: 1px solid #ddd
+}
+@media screen and (max-width: 991px) {
+  .videos .holder {
+    flex-direction: column;
+  }
+}
+.holder .list {
+  min-width: 300px;
+  background-color: white;
+}
+.holder .list .name {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-transform: capitalize;
+}
+.holder .list .name p {
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+.holder .list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.holder .list ul li {
+  padding: 20px;
+  border-top: 1px solid var(--section-background);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  cursor: pointer;
+}
+.holder .list ul li .link {
+  color: black;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.holder .list ul li span {
+  display: block;
+  padding-top: 10px;
+  color: #777;
+}
+.holder .list ul li:hover {
+  background-color: rgba(238, 238, 238, 0.501);
+}
+.holder .list ul li:hover .link {
+  color: var(--main-color);
+}
+.preview {
+  background-color: #e2e2e2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.preview img {
+  width: 100%;
+}
+.preview .info {
+  padding: 20px;
+  background-color: white;
+  margin-top: 10px;
+}
+

@@ -31,7 +31,6 @@ let counter = setInterval(() => {
     const m = document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}`: minutes;
     const s = document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}`: seconds;
 
-
     if (dateDiff < 0) {
         clearInterval(counter);
     }
