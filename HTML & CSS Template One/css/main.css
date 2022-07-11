@@ -1183,10 +1183,14 @@ hr {
   background-color: #eee;
 }
 .our-skills-card-range .range {
-  width: 80%;
   height: 30px;
   background-color: var(--main-color);
   margin-top: 10px;
+  transition: width 0.3s linear;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
 }
 /* end our skills */
 /* start work steps */
@@ -1695,16 +1699,42 @@ hr {
   gap: 20px;
 }
 .stats-card {
-  background-color: white;
+  position: relative;
+  margin-top: 50px;
   padding: 30px 15px;
   text-align: center;
-  position: relative;
+  background-color: white;
   transition: var(--main-transition);
   -webkit-transition: var(--main-transition);
   -moz-transition: var(--main-transition);
   -ms-transition: var(--main-transition);
   -o-transition: var(--main-transition);
-  margin-top: 50px;
+}
+.stats-card::before, 
+.stats-card::after {
+  position: absolute;
+  content: " ";
+  width: 2px;
+  background-color: var(--main-color);
+  transition:height .6s;
+  -webkit-transition:height .6s;
+  -moz-transition:height .6s;
+  -ms-transition:height .6s;
+  -o-transition:height .6s;
+}
+.stats-card::before {
+  left: 0;
+  bottom: 0;
+  height: 0%;
+}
+.stats-card::after {
+  top: 0;
+  right: 0;
+  height: 0%;
+}
+.stats-card:hover:before, 
+.stats-card:hover:after  {
+  height: 100%;
 }
 .stats-card .numbers {
   display: block;

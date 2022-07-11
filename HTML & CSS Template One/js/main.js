@@ -37,3 +37,43 @@ let counter = setInterval(() => {
     
 }, 1000);
 //  *---------- end time ------------*
+//  *---------- start range ------------*
+let ourSkillsCardRange = document.querySelectorAll(".our-skills-card-range .range");
+let ourSkillsSection = document.querySelector(".our-skills");
+//  *---------- end range ------------*
+
+
+//  *---------- start increase numbers ------------*
+let numbers = document.querySelectorAll(".stats-card .numbers");
+let statsSection = document.querySelector(".stats");
+let started = false; // function started ? no
+
+window.onscroll = () => {
+    //  *---------- start range ------------*
+    if (window.scrollY >= ourSkillsSection.offsetTop - 300) {
+        ourSkillsCardRange.forEach((range) => {
+            range.style.width = range.dataset.width;
+            console.log(range);
+        });
+    };
+    //  *---------- end range ------------*
+
+    //  *---------- start increase numbers ------------*
+    if (window.scrollY >= statsSection.offsetTop - 150){
+        if(!started) {
+            numbers.forEach((num) => startCount(num));
+        }
+        started = true;
+    }
+    //  *---------- end increase numbers ------------*
+}
+function startCount(el) {
+    let goal = el.dataset.goal;
+    let count = setInterval(() => {
+        el.textContent++;
+        if (el.textContent == goal) {
+            clearInterval(count);
+        }
+    }, 2000 / goal);
+}
+//  *---------- end increase numbers ------------*
