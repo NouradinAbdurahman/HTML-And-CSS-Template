@@ -1753,3 +1753,121 @@ hr {
   display: block;
 }
 /* end stats */
+/* start discount */
+.discount {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.discount-holder {
+  display: flex;
+  flex-direction: row;
+}
+.discount-card {
+  /* width: 50%;
+  height: 100vh; */
+}
+.discount-card.image {
+  background-image: url("../imgs/discount-background1.jpg");
+  background-size: cover;
+  color: white;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  animation: change-background 10s linear infinite;
+}
+.discount-card.image::before {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #1786e0f7;
+  z-index: -1;
+}
+.discount-card.image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px 100px;
+}
+.discount-card.image h2, .discount-card.form h2  {
+  color: white;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+.discount-card.image p {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.5;
+  padding: 30px 0;
+}
+.discount-card.image img {
+  width: 50%;
+}
+.discount-card.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.discount-card.form .input{
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  caret-color: var(--main-color);
+}
+.discount-card.form h2 {
+  color: black;
+  padding-bottom: 30px;
+}
+.discount-card.form {
+  background-color: white;
+}
+.discount .form textarea.input {
+  resize: none;
+  height: 200px;
+}
+.discount .form [type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+@media screen and (max-width: 991px) {
+  .discount-holder {
+    display: flex;
+    flex-direction: column;
+  }
+  .discount-card {
+    width: 100%;
+    height: 100%;
+    background-color: #2196f3;
+  }
+  .discount-card.image {
+    padding-top: 50px;
+  }
+  .discount-card.image {
+    padding: 50px 20px;
+  }
+}
+/* start discount */

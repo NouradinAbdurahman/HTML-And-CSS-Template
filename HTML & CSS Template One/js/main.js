@@ -59,7 +59,7 @@ window.onscroll = () => {
     //  *---------- end range ------------*
 
     //  *---------- start increase numbers ------------*
-    if (window.scrollY >= statsSection.offsetTop - 150){
+    if (window.scrollY >= statsSection.offsetTop){
         if(!started) {
             numbers.forEach((num) => startCount(num));
         }
