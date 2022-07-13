@@ -1,10 +1,3 @@
-// *----- Show Other Links Section ----*
-const otherLinks = document.querySelector(".other-link");
-const megaMenu = document.querySelector(".mega-menu");
-otherLinks.addEventListener("click", () => {
-    megaMenu.classList.toggle("show-mega-menu");
-})
-// *----- End Show Other Links Section ----*
 
 //  *---------- start time ------------*
 // let futureDate = new Date("Sep 02,2022 22:00:00").getTime();
